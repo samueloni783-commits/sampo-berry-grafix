@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sampo Berry Grafix</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#070707;
+    color:white;
+}
+
+:root{
+    --gold:#d4af37;
+    --light-gold:#f1d675;
+    --dark:#070707;
+    --card:#111;
+    --gray:#999;
+}
+
+
+/* NAVIGATION */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:rgba(5,5,5,.95);
+    border-bottom:1px solid #222;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-circle{
+    width:45px;
+    height:45px;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    font-weight:bold;
+}
+
+.logo h2{
+    font-size:16px;
+}
+
+.logo span{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:130px 8% 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+
+    background:
+    radial-gradient(
+        circle at 80% 40%,
+        rgba(212,175,55,.18),
+        transparent 35%
+    );
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #594b1e;
+    border-radius:30px;
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(55px,8vw,100px);
+    line-height:.95;
+    margin-bottom:30px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:#aaa;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+.btn{
+    padding:16px 25px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.gold{
+    background:var(--gold);
+    color:#000;
+}
+
+.gold:hover{
+    background:var(--light-gold);
+}
+
+.outline{
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.outline:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+.hero-image{
+    width:42%;
+}
+
+.hero-image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+    border:1px solid #333;
+}
+
+
+/* SECTIONS */
+
+.section{
+    padding:110px 8%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.heading span{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+.heading h2{
+    font-size:48px;
+    margin:12px 0;
+}
+
+.heading p{
+    color:#777;
+}
+
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:35px;
+    background:var(--card);
+    border:1px solid #222;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:var(--gold);
+}
+
+.icon{
+    color:var(--gold);
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:#888;
+    line-height:1.7;
+    margin-top:10px;
+}
+
+
+/* PORTFOLIO */
+
+.portfolio{
+    background:#0b0b0b;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.gallery-card{
+    background:#111;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #222;
+}
+
+.gallery-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-info{
+    padding:20px;
+}
+
+.gallery-info span{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+
+/* WHY US */
+
+.why{
+    padding:110px 8%;
+    display:flex;
+    align-items:center;
+    gap:70px;
+}
+
+.why img{
+    width:50%;
+    height:480px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.why-text{
+    flex:1;
+}
+
+.why-text span{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.why-text h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.why-text strong{
+    color:var(--gold);
+}
+
+.why-text p{
+    color:#888;
+    line-height:1.8;
+}
+
+.features{
+    margin-top:25px;
+    display:grid;
+    gap:15px;
+}
+
+.features b{
+    color:var(--gold);
+    margin-right:10px;
+}
+
+
+/* ORDER */
+
+.order{
+    background:#0b0b0b;
+}
+
+form{
+    max-width:750px;
+    margin:auto;
+    display:grid;
+    gap:18px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:18px;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    border-radius:6px;
+    outline:none;
+}
+
+textarea{
+    min-height:170px;
+}
+
+button{
+    cursor:pointer;
+}
+
+.submit{
+    border:0;
+    padding:16px;
+    font-weight:bold;
+}
+
+
+/* PROFILE */
+
+.profile{
+    padding:110px 8%;
+}
+
+.profile-card{
+    max-width:850px;
+    margin:auto;
+    padding:35px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.avatar{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+}
+
+.profile-info{
+    flex:1;
+}
+
+.profile-info p{
+    color:#888;
+    margin-top:5px;
+}
+
+.profile-btn{
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:12px 20px;
+    border-radius:6px;
+}
+
+.profile-options{
+    max-width:850px;
+    margin:25px auto;
+    display:grid;
+    gap:12px;
+}
+
+.profile-options button{
+    padding:20px;
+    background:#111;
+    color:white;
+    border:1px solid #222;
+    border-radius:10px;
+    text-align:left;
+    font-size:15px;
+}
+
+.profile-options button:hover{
+    border-color:var(--gold);
+}
+
+
+/* FOOTER */
+
+footer{
+    padding:60px 8%;
+    text-align:center;
+    border-top:1px solid #222;
+}
+
+footer p{
+    color:#666;
+    margin-top:10px;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25d366;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:999;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+    }
+
+    .hero-image{
+        width:100%;
+    }
+
+    .services,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .why{
+        flex-direction:column;
+    }
+
+    .why img{
+        width:100%;
+    }
+
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+<div class="logo-circle">
+SBG
+</div>
+
+<div>
+<h2>Sampo Berry</h2>
+<span>GRAFIX</span>
+</div>
+
+</div>
+
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#order">Order</a>
+<a href="#profile">Profile</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+✦ PREMIUM GRAPHIC DESIGN
+</div>
+
+<h1>
+Your Vision.<br>
+<span>Our Creativity.</span>
+</h1>
+
+<p>
+Welcome to Sampo Berry Grafix — where creative ideas
+become powerful designs.
+</p>
+
+<div class="buttons">
+
+<a href="#order" class="btn gold">
+Order a Design
+</a>
+
+<a href="#portfolio" class="btn outline">
+View Portfolio
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80"
+alt="Graphic Design">
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+<div class="heading">
+
+<span>WHAT WE DO</span>
+
+<h2>Our Services</h2>
+
+<p>
+Creative solutions designed to make your brand stand out.
+</p>
+
+</div>
+
+
+<div class="services">
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>Logo Design</h3>
+
+<p>
+Unique and professional logos for your business.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">▣</div>
+
+<h3>Flyer Design</h3>
+
+<p>
+Eye-catching flyers for businesses and events.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">▤</div>
+
+<h3>Banner Design</h3>
+
+<p>
+Professional banners for advertising.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">◉</div>
+
+<h3>Photo Editing</h3>
+
+<p>
+Creative photo retouching and manipulation.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">▥</div>
+
+<h3>Frame Design</h3>
+
+<p>
+Beautiful canvas and acrylic frame designs.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">☕</div>
+
+<h3>Magic Mug Design</h3>
+
+<p>
+Personalized mug designs for gifts.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PORTFOLIO -->
+
+<section class="section portfolio" id="portfolio">
+
+<div class="heading">
+
+<span>OUR CREATIVE WORK</span>
+
+<h2>Portfolio</h2>
+
+<p>
+A glimpse of what we can create.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>BRANDING</span>
+
+<h3>Brand Identity</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>CREATIVE</span>
+
+<h3>Creative Artwork</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>GRAPHICS</span>
+
+<h3>Graphic Design</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>BRANDING</span>
+
+<h3>Modern Branding</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>DESIGN</span>
+
+<h3>Creative Project</h3>
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-card">
+
+<img
+src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80">
+
+<div class="gallery-info">
+
+<span>DIGITAL ART</span>
+
+<h3>Visual Artwork</h3>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- WHY US -->
+
+<section class="why">
+
+<img
+src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=80">
+
+
+<div class="why-text">
+
+<span>WHY CHOOSE SBG</span>
+
+<h2>
+We Don't Just Design.<br>
+<strong>We Create Impact.</strong>
+</h2>
+
+<p>
+Every design is created with creativity, quality and
+attention to detail. Our goal is to make your brand
+impossible to ignore.
+</p>
+
+
+<div class="features">
+
+<div><b>✓</b> Professional Designs</div>
+
+<div><b>✓</b> Fast Delivery</div>
+
+<div><b>✓</b> Affordable Pricing</div>
+
+<div><b>✓</b> Customer Satisfaction</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ORDER -->
+
+<section class="section order" id="order">
+
+<div class="heading">
+
+<span>LET'S CREATE</span>
+
+<h2>Order Your Design</h2>
+
+<p>
+Tell us what you need.
+</p>
+
+</div>
+
+
+<form id="orderForm">
+
+<input
+id="customerName"
+type="text"
+placeholder="Your Name"
+required>
+
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="Phone Number"
+required>
+
+
+<select id="service" required>
+
+<option value="">
+Choose a Service
+</option>
+
+<option>Logo Design</option>
+<option>Flyer Design</option>
+<option>Banner Design</option>
+<option>Photo Editing</option>
+<option>Frame Design</option>
+<option>Magic Mug Design</option>
+
+</select>
+
+
+<textarea
+id="details"
+placeholder="Describe your design..."
+required>
+</textarea>
+
+
+<button
+class="btn gold submit"
+type="submit">
+
+Send Order on WhatsApp →
+
+</button>
+
+</form>
+
+</section>
+
+
+
+<!-- PROFILE -->
+
+<section class="profile" id="profile">
+
+<div class="heading">
+
+<span>MY ACCOUNT</span>
+
+<h2>Customer Profile</h2>
+
+<p>
+Manage your Sampo Berry Grafix account.
+</p>
+
+</div>
+
+
+<div class="profile-card">
+
+<div class="avatar">
+👤
+</div>
+
+
+<div class="profile-info">
+
+<h3 id="profileName">
+New Customer
+</h3>
+
+<p id="profilePhone">
+Phone number not added
+</p>
+
+<p id="profileEmail">
+Email not added
+</p>
+
+</div>
+
+
+<button
+class="profile-btn"
+id="editProfile">
+
+Edit Profile
+
+</button>
+
+</div>
+
+
+
+<div class="profile-options">
+
+<button id="ordersBtn">
+📦 &nbsp; My Orders
+</button>
+
+<button id="savedBtn">
+❤️ &nbsp; Saved Designs
+</button>
+
+<button id="notificationsBtn">
+🔔 &nbsp; Notifications
+</button>
+
+<button id="settingsBtn">
+⚙️ &nbsp; Settings
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>Sampo Berry Grafix</h2>
+
+<p>
+Always got u cover.
+</p>
+
+<p>
+© 2026 Sampo Berry Grafix. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+<!-- WHATSAPP -->
+
+<a
+class="whatsapp"
+href="https://wa.me/2340000000000"
+target="_blank">
+
+💬 Chat on WhatsApp
+
+</a>
+
+
+
+<script>
+
+/* PROFILE */
+
+document
+.getElementById("editProfile")
+.addEventListener("click", function(){
+
+let name =
+prompt("Enter your name:");
+
+if(name){
+
+document
+.getElementById("profileName")
+.textContent = name;
+
+}
+
+
+let phone =
+prompt("Enter your phone number:");
+
+if(phone){
+
+document
+.getElementById("profilePhone")
+.textContent = phone;
+
+}
+
+
+let email =
+prompt("Enter your email:");
+
+if(email){
+
+document
+.getElementById("profileEmail")
+.textContent = email;
+
+}
+
+});
+
+
+
+/* PROFILE BUTTONS */
+
+document
+.getElementById("ordersBtn")
+.addEventListener("click", function(){
+
+alert(
+"Your Orders\n\nYour orders will appear here."
+);
+
+});
+
+
+document
+.getElementById("savedBtn")
+.addEventListener("click", function(){
+
+alert(
+"Saved Designs\n\nYour saved designs will appear here."
+);
+
+});
+
+
+document
+.getElementById("notificationsBtn")
+.addEventListener("click", function(){
+
+alert(
+"Notifications\n\nYou have no new notifications."
+);
+
+});
+
+
+document
+.getElementById("settingsBtn")
+.addEventListener("click", function(){
+
+alert(
+"Settings\n\nYour SBG settings will appear here."
+);
+
+});
+
+
+
+/* ORDER FORM */
+
+document
+.getElementById("orderForm")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+
+let name =
+document.getElementById("customerName").value;
+
+let phone =
+document.getElementById("customerPhone").value;
+
+let service =
+document.getElementById("service").value;
+
+let details =
+document.getElementById("details").value;
+
+
+let whatsappNumber =
+"2340000000000";
+
+
+let message =
+"Hello Sampo Berry Grafix!%0A%0A" +
+
+"I want to order a design.%0A%0A" +
+
+"Name: " +
+encodeURIComponent(name) +
+
+"%0APhone: " +
+encodeURIComponent(phone) +
+
+"%0AService: " +
+encodeURIComponent(service) +
+
+"%0ADetails: " +
+encodeURIComponent(details);
+
+
+window.open(
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+message,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
